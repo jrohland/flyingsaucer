@@ -19,8 +19,6 @@
  */
 package org.xhtmlrenderer.pdf;
 
-import java.awt.Color;
-
 import org.w3c.dom.Element;
 import org.xhtmlrenderer.css.parser.FSColor;
 import org.xhtmlrenderer.layout.LayoutContext;

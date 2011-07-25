@@ -20,7 +20,6 @@
 package org.xhtmlrenderer.swing;
 
 import java.awt.Rectangle;
-import java.awt.event.MouseEvent;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
