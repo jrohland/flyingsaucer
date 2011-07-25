@@ -638,7 +638,7 @@ public class RootPanel extends JPanel implements ComponentListener, UserInterfac
                 new Thread(new Runnable() {
                     public void run() {
                         try {
-                            Thread.currentThread().sleep(Math.min(maxRepaintRequestWaitMs, Math.abs(maxRepaintRequestWaitMs - el)));
+                            Thread.sleep(Math.min(maxRepaintRequestWaitMs, Math.abs(maxRepaintRequestWaitMs - el)));
                             EventQueue.invokeLater(new Runnable() {
                                 public void run() {
                                     XRLog.general(Level.FINE, "--> running queued repaint request");
