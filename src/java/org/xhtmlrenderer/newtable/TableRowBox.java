@@ -199,13 +199,10 @@ public class TableRowBox extends BlockBox {
         }
         
         if (getChildrenContentType() != CONTENT_EMPTY) {
-            int cCol = 0;
             for (Iterator i = getChildIterator(); i.hasNext(); ) {
                 TableCellBox cell = (TableCellBox)i.next();
                 
                 layoutCell(c, cell, 0);
-                
-                cCol++;
             }
         }
         

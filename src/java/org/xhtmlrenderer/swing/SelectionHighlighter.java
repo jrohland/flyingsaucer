@@ -594,7 +594,6 @@ public class SelectionHighlighter implements MouseMotionListener, MouseListener 
         if (box == null) {
             return null;
         }
-        Element elt = null;
         int offset = 0;
         InlineLayoutBox ilb = null;
         boolean containsWholeIlb = false;
@@ -611,7 +610,6 @@ public class SelectionHighlighter implements MouseMotionListener, MouseListener 
 
                             if (ilbt.isContainsVisibleContent()) {
                                 boolean hasDecentTextNode = false;
-                                int x = ilbt.getAbsX();
 
                                 for (Iterator it = ilbt.getInlineChildren().iterator(); it
                                         .hasNext();) {
