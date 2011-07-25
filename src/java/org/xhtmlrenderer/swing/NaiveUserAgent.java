@@ -127,6 +127,8 @@ public class NaiveUserAgent implements UserAgentCallback, DocumentListener {
             XRLog.exception("item at URI " + uri + " not found");
         } catch (java.io.IOException e) {
             XRLog.exception("IO problem for " + uri, e);
+        } catch (NullPointerException e) {
+            XRLog.exception("bad URL given: " + uri, e);
         }
         return is;
     }

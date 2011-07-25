@@ -67,6 +67,11 @@ public class ImageUtil {
 	}
 
     public static BufferedImage makeCompatible(BufferedImage bimg) {
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        if (ge.isHeadlessInstance()) {
+            return bimg;
+        }
+        
         GraphicsConfiguration gc = getGraphicsConfiguration();
         if (bimg.getColorModel().equals(gc.getColorModel())) {
             return bimg;
@@ -100,7 +105,11 @@ public class ImageUtil {
 
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		if (ge.isHeadlessInstance()) {
-			bimage = new BufferedImage(width, height, biType);
+		    try {
+		        bimage = new BufferedImage(width, height, biType);
+		    } catch (IllegalArgumentException e) {
+		        bimage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		    }
 		} else {
             GraphicsConfiguration gc = getGraphicsConfiguration();
 

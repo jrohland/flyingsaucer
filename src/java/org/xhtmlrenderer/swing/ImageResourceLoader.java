@@ -1,5 +1,6 @@
 package org.xhtmlrenderer.swing;
 
+import java.awt.color.CMMException;
 import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -81,11 +82,18 @@ public class ImageResourceLoader {
                 XRLog.exception("Can't read image file; image at URI '" + uri + "' not found");
             } catch (IOException e) {
                 XRLog.exception("Can't read image file; unexpected problem for URI '" + uri + "'", e);
+            } catch (CMMException e) {
+                XRLog.exception("Can't read image file; unexpected problem for URI '" + uri + "'", e);
+            } catch (IllegalArgumentException e) {
+                XRLog.exception("Can't read image file; unexpected problem for URI '" + uri + "'", e);
             } finally {
                 sr.close();
             }
         } catch (IOException e) {
             // couldnt open stream at URI...
+            XRLog.exception("Can't open stream for URI '" + uri + "': " + e.getMessage());
+        } catch (NullPointerException e) {
+         // couldnt open stream at URI...
             XRLog.exception("Can't open stream for URI '" + uri + "': " + e.getMessage());
         }
         if (ir == null) {
