@@ -78,7 +78,6 @@ public class DirectoryLister {
             sb.append("<table style='width: 75%'>");
             File[] files = file.listFiles();
             String cls = "";
-            String img = "";
             for (int i = 0; i < files.length; i++) {
                 File f = files[i];
                 if ( f.isHidden() ) continue;
