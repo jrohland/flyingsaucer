@@ -354,7 +354,7 @@ public class BrowserActions {
     private void openAndShowFile() {
         try {
             FileDialog fd = new FileDialog(root.frame, "Open a local file", FileDialog.LOAD);
-            fd.show();
+            fd.setVisible(true);
             if (fd.getFile() != null) {
                 final String url = new File(fd.getDirectory(), fd.getFile()).toURI().toURL().toString();
                 root.panel.loadPage(url);

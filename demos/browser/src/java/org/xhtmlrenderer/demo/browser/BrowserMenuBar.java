@@ -385,11 +385,11 @@ public class BrowserMenuBar extends JMenuBar {
 
                 inspectorFrame.pack();
                 inspectorFrame.setSize(500, 600);
-                inspectorFrame.show();
+                inspectorFrame.setVisible(true);
             } else {
                 inspector.setForDocument(root.panel.view.getDocument(), root.panel.view.getSharedContext(), root.panel.view.getSharedContext().getCss());
             }
-            inspectorFrame.show();
+            inspectorFrame.setVisible(true);
         }
     }
 
